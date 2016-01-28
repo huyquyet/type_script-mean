@@ -1,3 +1,4 @@
+/// <reference path='_all.ts'/>
 
 module mean{
   'use strict';
@@ -13,9 +14,9 @@ var app = angular.module('Mean', [
   //'appDirectives',
   'appFilters',
   'appServices',
-  'baseCtrl',
-  'postCtrl',
-  'postService'
+  'baseCtrl_ts',
+  'postCtrl_ts',
+  'postService_ts'
 ]);
 
 app.config(['flashProvider', function (flashProvider) {
