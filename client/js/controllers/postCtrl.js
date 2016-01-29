@@ -1,8 +1,8 @@
 angular.module('postCtrl', [])
-    .controller('ListPostController', ['$scope', '$state', 'flash', '$modal', 'appAlert', 'Post',
-        function ($scope, $state, flash, $modal, appAlert, Post) {
+    .controller('ListPostController', ['$scope', '$state', 'flash', 'Post',
+        function ($scope, $state, flash, appAlert, Post) {
             Post.get().success(function (data) {
-                $scope.posts = data;
+                $scope.list_posts = data;
             })
                 .error(function () {
                     $scope.error = 'Có lỗi trong quá trình tai bài viết';
@@ -29,6 +29,7 @@ angular.module('postCtrl', [])
     .controller('CreatePostController', ['$scope', '$state', 'flash', 'Post',
         function ($scope, $state, flash, Post) {
             $scope.formData = {};
+
             $scope.createPost = function () {
                 $scope.Proccess = true;
                 if (!$.isEmptyObject($scope.formData)) {
